@@ -14,7 +14,7 @@
     <version>1.0.0.RELEASE</version>
     <name>backend</name>
     <packaging>jar</packaging>
-    <description>Backend API for keyist e-commerce</description>
+    <description>Backend API for e-commerce</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

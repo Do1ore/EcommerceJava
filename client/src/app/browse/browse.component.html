@@ -22,11 +22,11 @@
         <p *ngIf="minPrice !== '0' || maxPrice !== '0'" class="remove" (click)="clearPrice()">remove</p>
         <div class="row">
           <div class="min col-md-4">
-            <p>Min Price</p>
+            <p>Мин</p>
             <input type="number" (change)="selectMin($event.target.value)" value="{{minPrice !== '0' ? minPrice : ''}}">
           </div>
           <div class="max col-md-4">
-            <p>Max Price</p>
+            <p>Макс</p>
             <input type="number" (change)="selectMax($event.target.value)" value="{{maxPrice !== '0' ? maxPrice : ''}}">
           </div>
           <div class="col-md-2"></div>
@@ -34,7 +34,7 @@
       </div>
       <div class="color">
         <p>Color</p>
-        <p *ngIf="selectedColor !== 'any'" class="remove" (click)="clearColor()">remove</p>
+        <p *ngIf="selectedColor !== 'any'" class="remove" (click)="clearColor()">Очистить</p>
         <div>
           <div *ngFor="let color of (browseState | async).colors" [ngStyle]="{'background-color': color.color.hex}"
             (click)="selectColor(color.color.name)" class="{{selectedColor === color.color.name ? 'active' : ''}}">
@@ -63,8 +63,7 @@
               class="alert-warning col-md-12">
               <div *ngIf="e.error.status === 400 || e.error.status === 401 ">Problem loading products...</div>
               <div *ngIf="e.error.status === 500 || e.error.status === 0 ">Internal server error! Please contact our
-                support
-                team.
+                support team.
               </div>
             </div>
           </div>

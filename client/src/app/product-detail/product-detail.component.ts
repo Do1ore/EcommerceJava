@@ -43,7 +43,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
               private store: Store<fromApp.AppState>) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.locStrat.onPopState(() => {
       this.isPopState = true;
     });

@@ -28,9 +28,10 @@ spring:
         format_sql: true
   mail:
     host: smtp.gmail.com
-    host_address: host_address
-    username: username
-    password: password
+    host_address: localhost:4200
+    username: vlad.kharlamov.box@gmail.com
+    password: xbtr bype xmwk ttgj
+
     port: 587
     properties:
       mail:

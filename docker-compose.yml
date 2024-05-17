@@ -50,7 +50,7 @@ services:
       - '8080:8080'
 
   client:
-    image: 'keyist-client:latest'
+    image: 'keyist-client1:latest'
     build:
       context: ./client
     container_name: client
