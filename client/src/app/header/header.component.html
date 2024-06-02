@@ -45,13 +45,13 @@
     <div class="end navbar-nav">
       <div class="login" *ngIf="!(authState | async).authenticated">
         <a class="nav-link" routerLink="/login">
-          <p>Login</p>
+          <p>Войти</p>
         </a>
       </div>
 
       <div class="register" *ngIf="!(authState | async).authenticated">
         <a class="nav-link btn" routerLink="/signup">
-          <p>Sign up</p>
+          <p>Регистрация</p>
         </a>
       </div>
 
@@ -64,29 +64,29 @@
             <div>
               <a routerLink="/account/information" routerLinkActive="active">
                 <i class="fa fa-user-o" aria-hidden="true"></i>
-                <p>User Information</p>
+                <p>Данные пользователя</p>
               </a>
             </div>
             <div>
               <a routerLink="/account/orders" routerLinkActive="active"> <i class="fa fa-archive"
                   aria-hidden="true"></i>
-                <p>Orders</p>
+                <p>Заказы</p>
               </a>
             </div>
             <div>
               <a routerLink="/account/address" routerLinkActive="active"><i class="fa fa-home" aria-hidden="true"></i>
-                <p>Address</p>
+                <p>Адрес</p>
               </a>
             </div>
             <div>
               <a routerLink="/account/help" routerLinkActive="active"> <i class="fa fa-question-circle-o"
                   aria-hidden="true"></i>
-                <p>Help</p>
+                <p>Помощь</p>
               </a>
             </div>
             <div>
               <a (click)="userSignOut()"> <i class="fa fa fa-sign-out" aria-hidden="true"></i>
-                <p>Logout</p>
+                <p>Выйти</p>
               </a>
             </div>
           </div>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="row">
                       <div class="col-md-6">
-                        <p class="amount">Amount: <span>{{cartItem.amount}}</span></p>
+                        <p class="amount">Кол-во: <span>{{cartItem.amount}}</span></p>
                       </div>
                       <div class="col-md-6">
                         <p class="price">{{cartItem.price}} €</p>
@@ -144,10 +144,10 @@
               <div class="controls">
                 <div class="row">
                   <div class="col-md-6">
-                    <a routerLink="/cart" class="btn">Go to Cart</a>
+                    <a routerLink="/cart" class="btn">Обратно в корзину</a>
                   </div>
                   <div class="col-md-6">
-                    <button (click)="activatePurchase()" class="btn btn-info">Checkout</button>
+                    <button (click)="activatePurchase()" class="btn btn-info">Чекаут</button>
                   </div>
                 </div>
               </div>
@@ -156,7 +156,7 @@
             </div>
 
             <div *ngIf="!(cartState | async).cart || !(cartState | async).cart.cartItems.length" class="empty-cart">
-              <p>Your cart is empty.</p>
+              <p>Ваша корзина пустая!</p>
             </div>
 
           </div>
@@ -169,7 +169,7 @@
   <div *ngIf="(authState | async).authenticated && (authState | async).isActive == false"
     class="user-warning alert-warning">
     <hr class="p-0 m-0">
-    Welcome to Ecommerce! Your account is inactive. Please check your email and activate!
+    Добро пожаловать в ЕКоммерс. Ваш аккаунт не активен, пожалуйста проверьте email!
     <hr class="p-0 m-0">
   </div>
 </div>

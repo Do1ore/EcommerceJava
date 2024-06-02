@@ -1,14 +1,14 @@
-import { User } from './../../store/model';
+import {User} from './../../store/model';
 import * as OrderActions from './../../store/order/order.actions';
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { take } from 'rxjs/operators';
-import { AccountService } from 'src/app/services/account.service';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {Store} from '@ngrx/store';
+import {take} from 'rxjs/operators';
+import {AccountService} from 'src/app/services/account.service';
 import * as BlankValidators from '../../../utils/validators/blank.validator';
 import * as fromApp from '../../store/app.reducers';
-import { OrderState } from 'src/app/store/order/order.reducer';
+import {OrderState} from 'src/app/store/order/order.reducer';
 
 @Component({
   selector: 'app-shipping',
@@ -28,13 +28,14 @@ export class ShippingComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new OrderActions.SetCheckoutStep(1));
     this.shippingForm = new FormGroup({
-      shipAddress: new FormControl(null, [Validators.pattern('[0-9a-zA-Z #,-]+'), Validators.required, BlankValidators.notBlankValidator, Validators.minLength(3), Validators.maxLength(240)]),
-      billingAddress: new FormControl(null, [Validators.pattern('[0-9a-zA-Z #,-]+'), BlankValidators.checkIfBlankValidator, Validators.minLength(3), Validators.maxLength(240)]),
-      city: new FormControl(null, [Validators.pattern('^[a-zA-Z\\s]+$'), Validators.required, BlankValidators.notBlankValidator, Validators.minLength(3), Validators.maxLength(100)]),
-      state: new FormControl(null, [Validators.pattern('^[a-zA-Z\\s]+$'), BlankValidators.checkIfBlankValidator, Validators.minLength(3), Validators.maxLength(40)]),
+      shipAddress: new FormControl(null, [Validators.pattern('[0-9a-zA-Zа-яА-ЯёЁ #,-]+'), Validators.required, BlankValidators.notBlankValidator, Validators.minLength(3), Validators.maxLength(240)]),
+      billingAddress: new FormControl(null, [Validators.pattern('[0-9a-zA-Zа-яА-ЯёЁ #,-]+'), BlankValidators.checkIfBlankValidator, Validators.minLength(3), Validators.maxLength(240)]),
+      city: new FormControl(null, [Validators.pattern('^[a-zA-Zа-яА-ЯёЁ\\s]+$'), Validators.required, BlankValidators.notBlankValidator, Validators.minLength(3), Validators.maxLength(100)]),
+      state: new FormControl(null, [Validators.pattern('^[a-zA-Zа-яА-ЯёЁ\\s]+$'), BlankValidators.checkIfBlankValidator, Validators.minLength(3), Validators.maxLength(40)]),
       zip: new FormControl(null, [Validators.required, Validators.pattern('^[0-9]*$'), Validators.maxLength(6), Validators.minLength(5)]),
-      country: new FormControl(null, [Validators.pattern('^[a-zA-Z\\s]+$'), Validators.required, BlankValidators.notBlankValidator, Validators.minLength(3), Validators.maxLength(40)])
+      country: new FormControl(null, [Validators.pattern('^[a-zA-Zа-яА-ЯёЁ\\s]+$'), Validators.required, BlankValidators.notBlankValidator, Validators.minLength(3), Validators.maxLength(40)])
     });
+
 
     this.accountService.getUser().pipe(take(1)).subscribe(data => {
       this.shippingForm.patchValue({

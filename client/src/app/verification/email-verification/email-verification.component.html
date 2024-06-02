@@ -6,18 +6,18 @@
   </div>
   <div *ngIf="isVerified && !isError" class="row">
     <div class="col-md-12 col-12">
-      <p>Your account is successfully verified. Start shopping now!</p>
+      <p>Ваш аккаунт подтвержден! Начините шоппинг сейчас!</p>
       <div *ngIf="!isLoggedIn">Please <a routerLink="/login">login.</a></div>
-      <a class="btn home" routerLink="/">Homepage</a>
-      <a class="btn products" routerLink="/account/browse">Products</a>
+      <a class="btn home" routerLink="/">Главная</a>
+      <a class="btn products" routerLink="/account/browse">Товар</a>
     </div>
   </div>
 
   <div *ngIf="!isVerified && !isError" class="row">
-    <p>Sending request...</p>
+    <p>Отправка запроса...</p>
   </div>
 
   <div *ngIf="isError" class="row">
-    <p>Cannot activate at the moment. Please contact our support team.</p>
+    <p>Невозможно сейчас активировать. Свяжитесь со служюой поддержки</p>
   </div>
 </div>

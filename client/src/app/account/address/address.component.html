@@ -1,6 +1,6 @@
 <div class="address container">
   <div class="title">
-    <p>Address</p>
+    <p>Адрес</p>
   </div>
   <hr>
   <div *ngIf="innerLoading" class="loader"></div>
@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="country">COUNTRY</label>
+              <label for="country">Страна</label>
               <input type="text" id="country" class="form-control" name="country" formControlName="country"
                 [maxlength]="240">
               <span *ngIf="addressForm.get('country').invalid && addressForm.get('country').touched">
@@ -36,10 +36,10 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="state">STATE</label>
+              <label for="state">Регион</label>
               <input type="text" id="state" class="form-control" name="state" formControlName="state" [maxlength]="240">
               <span *ngIf="addressForm.get('state').invalid && addressForm.get('state').touched">
-                <span class="alert-danger">Please enter a valid state</span>
+                <span class="alert-danger">Введите правильный регион</span>
               </span>
             </div>
           </div>
