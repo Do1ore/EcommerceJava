@@ -29,7 +29,7 @@ export class PersonalComponent implements OnInit {
     this.store.dispatch(new OrderActions.SetCheckoutStep(0));
     this.personalForm = new FormGroup({
       shipName: new FormControl(null, [Validators.pattern('^[а-яА-Яa-zA-Z\\s]+$'), Validators.required, BlankValidators.notBlankValidator, Validators.minLength(3), Validators.maxLength(104)]),
-      phone: new FormControl(null, [Validators.required, Validators.pattern('[0-9]+'), Validators.minLength(11), Validators.maxLength(12)]),
+      phone: new FormControl(null, [Validators.required, Validators.minLength(12), Validators.maxLength(13)]),
     });
 
     this.store.select('order').pipe(take(1)).subscribe((order: OrderState) => {

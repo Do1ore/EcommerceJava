@@ -26,7 +26,7 @@ export class ResetDetailsComponent implements OnInit {
     this.detailsForm = new FormGroup({
       firstName: new FormControl(null, [Validators.pattern('^[a-zA-Zа-яА-ЯёЁ\\s]+$'), BlankValidators.checkIfBlankValidator, Validators.minLength(3), Validators.maxLength(52)]),
       lastName: new FormControl(null, [Validators.pattern('^[a-zA-Zа-яА-ЯёЁ\\s]+$'), BlankValidators.checkIfBlankValidator, Validators.minLength(3), Validators.maxLength(52)]),
-      phone: new FormControl(null, [BlankValidators.checkIfBlankValidator, Validators.pattern('^\\+375(17|25|29|33|44)[0-9]{7}$'), Validators.minLength(13), Validators.maxLength(13)]),
+      phone: new FormControl(null, [BlankValidators.checkIfBlankValidator, Validators.minLength(12), Validators.maxLength(13)]),
     });
 
     this.accountService.getUser().pipe(take(1), catchError(error => {
