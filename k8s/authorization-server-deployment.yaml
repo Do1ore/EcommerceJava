@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\v.harlamov\AppData\Local\Microsoft\WinGet\Links\kompose.exe convert
+    kompose.version: 1.31.2 (a92241f79)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: authorization-server
+  name: authorization-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: authorization-server
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\Users\v.harlamov\AppData\Local\Microsoft\WinGet\Links\kompose.exe convert
+        kompose.version: 1.31.2 (a92241f79)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/ecommercejava-default: "true"
+        io.kompose.service: authorization-server
+    spec:
+      containers:
+        - env:
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: keyistpassword
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql:3306/keyist?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+            - name: SPRING_DATASOURCE_USERNAME
+              value: keyistuser
+          image: keyist-authorization-server:latest
+          name: authorization-server
+          ports:
+            - containerPort: 8081
+              hostPort: 8081
+              protocol: TCP
+          resources: {}
+      restartPolicy: Always
+status: {}
