@@ -21,10 +21,10 @@ public class SwaggerConstants {
     @Value("${swagger.api.version}")
     private String apiVersion;
 
-    @Value("${swagger.contact.name}")
+    @Value("${swagger.contact.url}")
     private String contactName;
 
-    @Value("${swagger.contact.url}")
+    @Value("")
     private String contactUrl;
 
     @Value("${swagger.contact.email}")
