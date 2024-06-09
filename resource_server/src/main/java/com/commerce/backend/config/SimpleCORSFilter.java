@@ -21,6 +21,7 @@ public class SimpleCORSFilter implements Filter {
         log.info("SimpleCORSFilter init");
     }
 
+
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
             throws IOException, ServletException {

@@ -28,7 +28,7 @@ spring:
         format_sql: true
   mail:
     host: smtp.gmail.com
-    host_address: localhost:4200
+    host_address: http://35.228.67.205:4200
     username: vlad.kharlamov.box@gmail.com
     password: xbtr bype xmwk ttgj
 
@@ -51,7 +51,7 @@ security:
   public-pattern: /api/public/**
   auth:
     username: user_name
-    url: http://localhost:8081/oauth/check_token
+    url: http://35.228.67.205:8081/oauth/check_token
     client_id: client_id
     client_password: client_password
     connection_timeout: 60
@@ -69,13 +69,12 @@ security:
 
 swagger:
   host:
-    address: localhost:8080
+    address: http://35.228.67.205:8080
     path: /
   api:
     name: Keyist Api Documentation
     version: v1
   contact:
-    name: Ant Kaynak
-    url: https://www.keyist.tech
-    email: antkaynak1@gmail.com
+    name: Vlad Kharlamov
+    email: vlad.kharlamov.box@gmail.com
 
