@@ -72,7 +72,7 @@ swagger:
     address: http://35.228.67.205:8080
     path: /
   api:
-    name: Ecommerce Platform Api Documentation
+    name: Keyist Api Documentation
     version: v1
   contact:
     name: Vlad Kharlamov
