@@ -5,26 +5,104 @@
   <hr>
   <div class="accordion">
     <ngb-accordion #acc="ngbAccordion" [closeOthers]="false" [destroyOnHide]="true">
+      <ngb-panel id="static-0">
+        <ng-template ngbPanelTitle>
+          <span class="panel-title w-100">Что такое ЕКоммерс?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          ЕКоммерс это крупная сеть интернет магазинов, в котором можно удобно заказать товар с доставкой прямо до дома. Мы доступны во многих странанах и готовы доставить ваш товар почти в любою точку планеты!
+        </ng-template>
+      </ngb-panel>
       <ngb-panel id="static-1">
         <ng-template ngbPanelTitle>
-          <span class="panel-title">What is eCommerce?</span>
+          <span class="panel-title w-100">Как создать аккаунт?</span>
         </ng-template>
         <ng-template ngbPanelContent>
-          Ecommerce is a complex business. It involves many edge cases and a solid system architecture. This project is
-          simply a demo demonstrating basic features which is only the tip of an iceberg.
-          This project might ( and certainly does ) have bugs, vulnerabilities or some other types of issues. So,
-          contributions are welcome :)
+          Для создания аккаунта нажмите на кнопку "Регистрация" в правом верхнем углу сайта. Заполните форму регистрации, указав свой email и придумав пароль. Затем подтвердите свой аккаунт, перейдя по ссылке, которая придет на указанный вами email.
         </ng-template>
       </ngb-panel>
+
       <ngb-panel id="static-2">
         <ng-template ngbPanelTitle>
-          <span class="panel-title w-100">Что сделать в первую очередь</span>
+          <span class="panel-title w-100">Что сделать в первую очередь?</span>
         </ng-template>
         <ng-template ngbPanelContent>
-          В первую очередь стоит создать аккаунт и подтвердить его, перейдя по ссылке которя приет на указанную вами почту.
-          После можно выбрать понравившейся товар и добавить его в корзину
+          В первую очередь стоит создать аккаунт и подтвердить его, перейдя по ссылке, которая придет на указанный вами email. После этого вы можете выбрать понравившийся товар и добавить его в корзину.
         </ng-template>
       </ngb-panel>
+
+      <ngb-panel id="static-3">
+        <ng-template ngbPanelTitle>
+          <span class="panel-title w-100">Как добавить товар в корзину?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Для добавления товара в корзину выберите нужный товар на сайте и нажмите кнопку "Добавить в корзину" на странице товара. Вы можете продолжить покупки или перейти к оформлению заказа, нажав на значок корзины в верхнем правом углу.
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel id="static-4">
+        <ng-template ngbPanelTitle>
+          <span class="panel-title w-100">Как оформить заказ?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Для оформления заказа перейдите в корзину, проверьте список добавленных товаров и нажмите кнопку "Чекаут". Заполните форму с вашими данными для доставки и оплаты. Подтвердите заказ, нажав на кнопку "Подтвердить заказ".
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel id="static-5">
+        <ng-template ngbPanelTitle>
+          <span class="panel-title w-100">Как отследить заказ?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          После оформления заказа вы получите номер для отслеживания. Вы можете использовать этот номер на нашем сайте в разделе "Отслеживание заказа" или на сайте службы доставки.
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel id="static-6">
+        <ng-template ngbPanelTitle>
+          <span class="panel-title w-100">Какие способы оплаты вы принимаете?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Мы принимаем различные способы оплаты, включая кредитные и дебетовые карты (Visa, MasterCard, American Express), PayPal и другие популярные методы оплаты.
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel id="static-7">
+        <ng-template ngbPanelTitle>
+          <span class="panel-title w-100">Какие условия доставки?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Мы предлагаем несколько вариантов доставки, включая стандартную и экспресс-доставку. Стоимость и сроки зависят от вашего местоположения и выбранного способа доставки. Подробную информацию вы можете найти на странице "Доставка и оплата".
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel id="static-8">
+        <ng-template ngbPanelTitle>
+          <span class="panel-title w-100">Доставляете ли вы за границу?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Да, мы осуществляем международную доставку в большинство стран. Обратите внимание, что вы несете ответственность за оплату таможенных сборов и пошлин на ваш заказ.
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel id="static-9">
+        <ng-template ngbPanelTitle>
+          <span class="panel-title w-100">Как вернуть товар?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Если вы не удовлетворены покупкой, вы можете вернуть товар в течение 30 дней с момента получения. Пожалуйста, свяжитесь с нашей службой поддержки для получения инструкции по возврату.
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel id="static-10">
+        <ng-template ngbPanelTitle>
+          <span class="panel-title w-100">Как связаться с поддержкой?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Вы можете связаться с нашей службой поддержки через форму обратной связи на сайте, по email support@yourstore.com или по телефону +1 (800) 123-4567. Мы будем рады помочь вам с любыми вопросами.
+        </ng-template>
+      </ngb-panel>
+
     </ngb-accordion>
   </div>
 </div>

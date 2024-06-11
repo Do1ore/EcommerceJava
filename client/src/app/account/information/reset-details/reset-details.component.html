@@ -1,6 +1,6 @@
 <div class="reset-details">
   <div class="title">
-    <p>User Information</p>
+    <p>Информация пользователя</p>
   </div>
   <hr>
   <div *ngIf="innerLoading" class="loader"></div>
@@ -10,7 +10,7 @@
       <div class="info row">
         <div class="col-md-6">
           <div class="form-group">
-            <label for="firstName">NAME</label>
+            <label for="firstName">Имя</label>
             <input type="text" id="firstName" class="form-control" name="firstName" formControlName="firstName"
               [maxlength]="52">
             <span *ngIf="detailsForm.get('firstName').invalid && detailsForm.get('firstName').touched">
@@ -22,7 +22,7 @@
 
         <div class="col-md-6">
           <div class="form-group">
-            <label for="lastName">SURNAME</label>
+            <label for="lastName">Фамилия</label>
             <input type="text" id="lastName" class="form-control" name="lastName" formControlName="lastName"
               [maxlength]="52">
             <span *ngIf="detailsForm.get('lastName').invalid && detailsForm.get('lastName').touched">
@@ -36,7 +36,7 @@
       <div class="info row">
         <div class="col-md-6">
           <div class="form-group">
-            <label for="phone">НОМЕР ТЕЛЕФОНА</label>
+            <label for="phone">Номер телефона</label>
             <input type="text" id="phone" class="form-control" name="phone" formControlName="phone" [maxlength]="12">
             <span *ngIf="detailsForm.get('phone').invalid && detailsForm.get('phone').touched" class="alert-danger">
               Введите правильный номер телефона
@@ -51,7 +51,7 @@
       <div class="row controls">
         <div class="col-md-12">
           <button class="btn btn-info" type="submit" [disabled]="detailsForm.invalid || detailsForm.pending">
-            Update
+            Обновить
           </button>
         </div>
 

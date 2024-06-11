@@ -5,8 +5,8 @@
       <img src="../../../assets/key.png" style="height: 50px; width: 50px;" alt="login key">
     </div>
     <div class="col-md-8">
-      <p>SIGN UP</p>
-      <span>Welcome back to Ecommerce</span>
+      <p>Регистрация</p>
+      <span>Добро пожаловать в ЕКоммерс!</span>
     </div>
 
   </div>
@@ -15,9 +15,9 @@
     <div class="col-md-6">
       <div *ngFor="let e of (authState | async).errors">
         <div *ngIf="e.errorEffect == 'SIGN_IN'" class="alert-warning">
-          <div *ngIf="e.error.status === 400">Bad Credentials</div>
-          <div *ngIf="e.error.status === 401">401 Error</div>
-          <div *ngIf="e.error.status === 500 || e.error.status === 0">Internal server error! Please contact our support
+          <div *ngIf="e.error.status === 400">Неверные данные.</div>
+          <div *ngIf="e.error.status === 401">Ошибка авторизации.</div>
+          <div *ngIf="e.error.status === 500 || e.error.status === 0">Внутренняя ошибка.
             team.
           </div>
         </div>
@@ -41,29 +41,27 @@
           <div class="form-group">
             <label for="newPassword">PASSWORD</label>
             <input type="password" id="newPassword" class="form-control" name="newPassword"
-              formControlName="newPassword" [maxlength]="240">
+                   formControlName="newPassword" [maxlength]="240">
             <span
               *ngIf="signUpForm.get('passwordGroup.newPassword').invalid && signUpForm.get('passwordGroup.newPassword').touched">
-              <span *ngIf="signUpForm.get('passwordGroup.newPassword').errors['required']" class="alert-danger">This
-                field is required!</span>
-              <span *ngIf="signUpForm.get('passwordGroup.newPassword').errors['minlength']" class="alert-danger">The
-                password should at least be 6 digits!</span>
+              <span *ngIf="signUpForm.get('passwordGroup.newPassword').errors['required']" class="alert-danger">Это поле обязательно!</span>
+              <span *ngIf="signUpForm.get('passwordGroup.newPassword').errors['minlength']" class="alert-danger">Пароль минимум 6 сиволов!!</span>
             </span>
           </div>
           <div class="form-group">
-            <label for="newPasswordConfirm">PASSWORD REPEAT</label>
+            <label for="newPasswordConfirm">Повторите пароль</label>
             <input type="password" id="newPasswordConfirm" class="form-control" name="newPasswordConfirm"
-              formControlName="newPasswordConfirm" [maxlength]="240">
+                   formControlName="newPasswordConfirm" [maxlength]="240">
             <span
               *ngIf="signUpForm.get('passwordGroup.newPasswordConfirm').invalid && signUpForm.get('passwordGroup.newPasswordConfirm').touched">
               <span *ngIf="signUpForm.get('passwordGroup.newPasswordConfirm').errors['required']"
-                class="alert-danger">This field is required!</span>
+                    class="alert-danger">Это поле обязательно!</span>
 
             </span>
             <span *ngIf="signUpForm.get('passwordGroup').invalid && signUpForm.get('passwordGroup').touched">
               <span
                 *ngIf="signUpForm.get('passwordGroup').errors != null && signUpForm.get('passwordGroup').errors['noMatch']"
-                class="alert-danger">Your passwords must match!</span>
+                class="alert-danger">Пароль должны совпадать!</span>
             </span>
 
           </div>
@@ -73,7 +71,7 @@
         <div class="row">
           <div class="col-md-12">
             <button class="btn btn-info" type="submit"
-              [disabled]="signUpForm.invalid || signUpForm.pending || (authState | async).loading">Register
+                    [disabled]="signUpForm.invalid || signUpForm.pending || (authState | async).loading">Регистрация
             </button>
           </div>
         </div>
@@ -81,7 +79,7 @@
         <div class="signin row">
           <div class="col-md-12">
             <a routerLink="/login">
-              <p>Already have an account? <span>Login!</span></p>
+              <p>У вас есть аккаунт? <span>Войти!</span></p>
             </a>
           </div>
         </div>

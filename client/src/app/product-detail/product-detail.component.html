@@ -1,6 +1,6 @@
 <div class="product-detail container">
   <div *ngIf="fetchError != null">
-    <div class="alert-warning">Problem loading products...</div>
+    <div class="alert-warning">Ошибка при загрузке...</div>
   </div>
   <div *ngIf="innerLoading" class="loader"></div>
   <div *ngIf="innerLoading" style="min-height: 50vh"></div>
@@ -18,12 +18,12 @@
 
         <div class="row">
           <div class="amount col-md-6">
-            <div class="row"><span>AMOUNT</span></div>
+            <div class="row"><span>Кол-во</span></div>
             <div class="row"><input #amount type="number" placeholder="-" min="1" value="1"></div>
           </div>
 
           <div class="price col-md-6">
-            <span>{{ activeProductVariant.price }} €</span>
+            <span>{{ activeProductVariant.price }} BYN</span>
           </div>
         </div>
 
@@ -31,10 +31,9 @@
           <div class="col-md-12" *ngFor="let e of (cartState | async).errors">
             <div *ngIf="e.errorEffect == 'ADD_TO_CART'" class="alert-warning">
               <div class="col-md-12">
-                <div *ngIf="e.error.status === 400 || e.error.status === 401">Could not add item.</div>
-                <div *ngIf="e.error.status === 409">Please select a proper amount</div>
-                <div *ngIf="e.error.status === 500 || e.error.status === 0">Internal server error. Please contact our
-                  support team.
+                <div *ngIf="e.error.status === 400 || e.error.status === 401">Ошибка при добавлении.</div>
+                <div *ngIf="e.error.status === 409">Ошибка при добавлении. Укажите кол-во!</div>
+                <div *ngIf="e.error.status === 500 || e.error.status === 0">Внутренняя ошибка сервера.
                 </div>
               </div>
             </div>
@@ -43,10 +42,10 @@
             <div *ngIf="(cartState | async).loading" class="loader" style="top:0; left: 25%"></div>
             <button *ngIf="activeProductVariant.stock > 0" (click)="addToCart(amount)"
               [disabled]="(cartState | async).loading"
-              [style.display]="(cartState | async).loading ? 'none' : 'inline-block'" class="btn btn-info">Add to cart
+              [style.display]="(cartState | async).loading ? 'none' : 'inline-block'" class="btn btn-info">Добавить в корзину
             </button>
             <button *ngIf="activeProductVariant.stock === 0" [disabled]="(cartState | async).loading"
-              [style.display]="(cartState | async).loading ? 'none' : 'inline-block'" class="btn out-stock">Out Of Stock
+              [style.display]="(cartState | async).loading ? 'none' : 'inline-block'" class="btn out-stock">Нет в наличии
             </button>
           </div>
         </div>
@@ -54,13 +53,13 @@
 
         <div class="row">
           <div class="variant-title col-md-4 {{activeTab === 0 ? 'active': ''}}" (click)="setActiveTab(0)">
-            <p>Variants</p>
+            <p>Типы</p>
           </div>
           <div class="product-detail-title col-md-4 {{activeTab === 1 ? 'active': ''}}" (click)="setActiveTab(1)">
-            <p>Detail</p>
+            <p>Детали</p>
           </div>
           <div class="delivery-title col-md-4 {{activeTab === 2 ? 'active': ''}}" (click)="setActiveTab(2)">
-            <p>Delivery</p>
+            <p>Доставка</p>
           </div>
         </div>
 
@@ -73,41 +72,41 @@
           </div>
           <div class="product-detail-info col-md-12" *ngIf="activeTab === 1">
             <div>
-              <p>COLOR:</p>
+              <p>Цвет:</p>
               <div class="color" [ngStyle]="{'background-color': activeProductVariant.color.hex}"></div>
               <span>{{activeProductVariant.color.name.toLocaleUpperCase()}}</span>
             </div>
             <div>
-              <p>WIDTH:</p>
+              <p>Ширина:</p>
               <span>{{activeProductVariant.width}}</span>
             </div>
             <div>
-              <p>HEIGHT:</p>
+              <p>Высота:</p>
               <span>{{activeProductVariant.height}}</span>
             </div>
             <div>
-              <p>COMPOSITION:</p>
+              <p>Материал:</p>
               <span>{{activeProductVariant.composition}}</span>
             </div>
           </div>
           <div class="delivery-info col-md-12" *ngIf="activeTab === 2">
             <div>
-              <p>CARGO PRICE:</p>
-              <span>{{activeProductVariant.cargoPrice}} €</span>
+              <p>Цена доставки:</p>
+              <span>{{activeProductVariant.cargoPrice}} BYN</span>
             </div>
             <div>
-              <span>Orders go out in 1 business day or less.</span>
+              <span>Заказы отправляются в течение 1 рабочего дня или быстрее.</span>
             </div>
             <div>
-              <span>We ship internationally, to most countries.</span>
+              <span>Мы осуществляем международную доставку в большинство стран.</span>
             </div>
             <div>
-              <span>International customers: you will be responsible for paying any CUSTOMS and DUTIES on your
-                order.</span>
+              <span>Международные клиенты: вы несете ответственность за оплату таможенных сборов и пошлин на ваш заказ.</span>
             </div>
             <div>
-              <p>This is a demo site. Products listed here are only for demonstration purposes.</p>
+              <p>Это демонстрационный сайт. Продукты, представленные здесь, предназначены только для демонстрационных целей.</p>
             </div>
+
           </div>
         </div>
       </div>

@@ -2,24 +2,23 @@
   <div class="row">
     <div class="filters col-md-3">
       <div class="categories">
-        <p>Categories</p>
-        <p *ngIf="selectedCategory !== 'any'" class="remove" (click)="clearCategory()">remove</p>
+        <p>Категории</p>
+        <p *ngIf="selectedCategory !== 'any'" class="remove" (click)="clearCategory()">очистить</p>
         <div class="category {{selectedCategory === c.category.name ? 'active': ''}}"
           *ngFor="let c of (browseState | async).categories" (click)="selectCategory(c.category.name)">
           {{c.category.name}}
         </div>
         <div *ngFor="let e of (browseState | async).errors">
           <div *ngIf="e.errorEffect == 'FETCH_CATEGORY'" class="alert-warning">
-            <div *ngIf="e.error.status === 400 || e.error.status === 401">Problem loading categories...</div>
-            <div *ngIf="e.error.status === 500 || e.error.status === 0 ">Internal server error! Please contact our
-              support team.
+            <div *ngIf="e.error.status === 400 || e.error.status === 401">Проблема при загрузке...</div>
+            <div *ngIf="e.error.status === 500 || e.error.status === 0 ">Внутренняя ошикба сервера.
             </div>
           </div>
         </div>
       </div>
       <div class="price">
-        <p>Price</p>
-        <p *ngIf="minPrice !== '0' || maxPrice !== '0'" class="remove" (click)="clearPrice()">remove</p>
+        <p>Цена</p>
+        <p *ngIf="minPrice !== '0' || maxPrice !== '0'" class="remove" (click)="clearPrice()">очистить</p>
         <div class="row">
           <div class="min col-md-4">
             <p>Мин</p>
@@ -33,7 +32,7 @@
         </div>
       </div>
       <div class="color">
-        <p>Color</p>
+        <p>Цвет</p>
         <p *ngIf="selectedColor !== 'any'" class="remove" (click)="clearColor()">Очистить</p>
         <div>
           <div *ngFor="let color of (browseState | async).colors" [ngStyle]="{'background-color': color.color.hex}"
@@ -47,7 +46,7 @@
       <div *ngIf="(browseState | async).loading" class="loader"></div>
       <div class="row">
         <div class="col-md-6">
-          <p class="product-count">{{(browseState | async).productsCount}} Product Found</p>
+          <p class="product-count">Товаров найдено: {{(browseState | async).productsCount}}</p>
         </div>
         <div class="col-md-6">
           <div class="sort">
@@ -82,7 +81,7 @@
                 <div class="product-color" [ngStyle]="{'background-color': product.productVariant.color.hex}"></div>
               </div>
               <div class="col-md-6">
-                <p>{{product.productVariant.price}} €</p>
+                <p>{{product.productVariant.price}} BYN</p>
               </div>
             </div>
           </a>
@@ -90,9 +89,9 @@
 
         <div class="product-not-found"
           *ngIf="(browseState | async).productsCount === 0 && !(browseState | async).loading">
-          <h1>:(</h1>
-          <h3>Sorry, no product found</h3>
-          <p>Try searching again!</p>
+          <h1>🥺</h1>
+          <h3>Извините, товар не найдн</h3>
+          <p>Попробуйте поискать снова!</p>
         </div>
       </div>
 

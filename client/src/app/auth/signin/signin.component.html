@@ -5,8 +5,8 @@
       <img src="../../../assets/key.png" style="height: 50px; width: 50px;" alt="login key">
     </div>
     <div class="col-md-8">
-      <p>LOGIN</p>
-      <span>Welcome back to Ecommerce</span>
+      <p>Войти</p>
+      <span>Добро пожаловать в ЕКоммерс!</span>
     </div>
 
   </div>
@@ -30,29 +30,28 @@
       <div *ngIf="(authState | async).loading" class="loader"></div>
       <form [formGroup]="signInForm" (ngSubmit)="onSubmitted()">
         <div class="form-group">
-          <label for="email">EMAIL</label>
+          <label for="email">ЭЛЕКТРОННАЯ ПОЧТА</label>
           <input type="text" id="email" class="form-control" name="email" formControlName="email" [maxlength]="240">
           <span *ngIf="signInForm.get('email').invalid && signInForm.get('email').touched" class="alert-danger">
-            Please enter a valid email!
-          </span>
+          Пожалуйста, введите действительный адрес электронной почты!
+        </span>
         </div>
 
         <div class="form-group">
-          <label for="password">PASSWORD</label>
+          <label for="password">Пароль</label>
           <input type="password" id="password" class="form-control" name="password" formControlName="password"
-            [maxlength]="240">
+                 [maxlength]="240">
           <span *ngIf="signInForm.get('password').invalid && signInForm.get('password').touched">
-            <span *ngIf="signInForm.get('password').errors.required" class="alert-danger">This field is
-              required!</span>
-            <span *ngIf="signInForm.get('password').errors.minlength" class="alert-danger">Minimum password length is
-              6!</span>
-          </span>
+          <span *ngIf="signInForm.get('password').errors.required" class="alert-danger">Это поле обязательно к заполнению!</span>
+          <span *ngIf="signInForm.get('password').errors.minlength" class="alert-danger">Минимальная длина пароля - 6 символов!</span>
+        </span>
         </div>
+
 
         <div class="forgot row">
           <div class="col-md-12">
             <a routerLink="/forgot-password">
-              <p>Forgot your password?</p>
+              <p>Забыли пароль?</p>
             </a>
           </div>
         </div>
@@ -68,7 +67,7 @@
         <div class="signup row">
           <div class="col-md-12">
             <a routerLink="/signup">
-              <p>Don't have an account? <span>Sign up!</span></p>
+              <p>У вас нет аккаунта? <span>Регистрация!</span></p>
             </a>
           </div>
         </div>
