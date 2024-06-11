@@ -42,7 +42,7 @@
             <div *ngIf="(cartState | async).loading" class="loader" style="top:0; left: 25%"></div>
             <button *ngIf="activeProductVariant.stock > 0" (click)="addToCart(amount)"
               [disabled]="(cartState | async).loading"
-              [style.display]="(cartState | async).loading ? 'none' : 'inline-block'" class="btn btn-info">Добавить в корзину
+              [style.display]="(cartState | async).loading ? 'none' : 'inline-block'" class="btn btn-danger">Добавить в корзину
             </button>
             <button *ngIf="activeProductVariant.stock === 0" [disabled]="(cartState | async).loading"
               [style.display]="(cartState | async).loading ? 'none' : 'inline-block'" class="btn out-stock">Нет в наличии

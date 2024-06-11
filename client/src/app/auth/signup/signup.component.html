@@ -30,16 +30,16 @@
       <div *ngIf="(authState | async).loading" class="loader"></div>
       <form [formGroup]="signUpForm" (ngSubmit)="onSubmitted()">
         <div class="form-group">
-          <label for="email">EMAIL</label>
+          <label for="email">Email</label>
           <input type="text" id="email" class="form-control" name="email" formControlName="email" [maxlength]="240">
           <span *ngIf="signUpForm.get('email').invalid && signUpForm.get('email').touched" class="alert-danger">
-            Please enter a valid email!
+            Введите валидную почту!
           </span>
         </div>
 
         <div formGroupName="passwordGroup">
           <div class="form-group">
-            <label for="newPassword">PASSWORD</label>
+            <label for="newPassword">Пароль</label>
             <input type="password" id="newPassword" class="form-control" name="newPassword"
                    formControlName="newPassword" [maxlength]="240">
             <span
@@ -70,7 +70,7 @@
 
         <div class="row">
           <div class="col-md-12">
-            <button class="btn btn-info" type="submit"
+            <button class="btn btn-danger" type="submit"
                     [disabled]="signUpForm.invalid || signUpForm.pending || (authState | async).loading">Регистрация
             </button>
           </div>
