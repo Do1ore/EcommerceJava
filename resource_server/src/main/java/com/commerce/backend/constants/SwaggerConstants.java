@@ -24,9 +24,6 @@ public class SwaggerConstants {
     @Value("${swagger.contact.url}")
     private String contactName;
 
-    @Value("")
-    private String contactUrl;
-
     @Value("${swagger.contact.email}")
     private String contactEmail;
 
