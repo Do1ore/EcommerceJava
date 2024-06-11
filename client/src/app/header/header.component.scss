@@ -24,7 +24,7 @@
       .nav-link {
         color: #000; /* Черный цвет для хорошей читаемости */
         &.active {
-          color: #17a2b8;
+          color: #f11010;
         }
       }
     }
@@ -60,7 +60,7 @@
         margin-left: 5px;
         padding-left: 10px;
         padding-right: 10px;
-        background-color: #17a2b8;
+        background-color: #f11010;
         border-radius: 10px;
 
         p {
@@ -124,7 +124,7 @@
             &.active {
               p,
               i {
-                color: #17a2b8;
+                color: #f11010;
               }
             }
           }
@@ -152,7 +152,7 @@
           font-size: 10px;
           vertical-align: super;
           display: inline-block;
-          background-color: #17a2b8;
+          background-color: #f11010;
           color: white;
         }
 
@@ -214,7 +214,7 @@
                 }
 
                 .price {
-                  color: #17a2b8;
+                  color: #f11010;
                   font-weight: bold;
                 }
               }
@@ -232,8 +232,8 @@
 
               a {
                 width: 80%;
-                color: #17a2b8;
-                border: 1px solid #17a2b8;
+                color: #f11010;
+                border: 1px solid #f11010;
                 border-radius: 10px;
               }
 
@@ -249,7 +249,7 @@
               margin: 0;
               padding: 10px;
               font-size: 14px;
-              color: #17a2b8;
+              color: #f11010;
               font-weight: bold;
             }
           }

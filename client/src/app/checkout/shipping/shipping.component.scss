@@ -24,7 +24,7 @@
       cursor: pointer;
       div {
         display: inline-block;
-        border: 1px solid #17a2b8;
+        border: 1px solid #f11010;
         width: 16px;
         height: 16px;
         background-color: white;
@@ -42,7 +42,7 @@
 
       &.active {
         div {
-          background-color: #17a2b8;
+          background-color: #f11010;
         }
 
         span {
@@ -67,8 +67,8 @@
     }
 
     .back {
-      border: 1px solid #17a2b8;
-      color: #17a2b8;
+      border: 1px solid #f11010;
+      color: #f11010;
       font-weight: bold;
     }
   }

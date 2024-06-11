@@ -20,7 +20,7 @@
         font-weight: bold;
         color: black;
         span {
-          color: #17a2b8;
+          color: #f11010;
           font-weight: 400;
         }
       }
@@ -99,7 +99,7 @@
           }
 
           .price {
-            color: #17a2b8;
+            color: #f11010;
             font-weight: bold;
           }
         }
@@ -119,7 +119,7 @@
   }
 
   ngb-pagination ::ng-deep ul > li.active > a {
-    background-color: #17a2b8 !important;
+    background-color: #f11010 !important;
     color: white !important;
     border-color: #dee2e6 !important;
     border-radius: 10px;
