@@ -6,7 +6,7 @@
     <div *ngFor="let cartItem of (cartState | async).cart.cartItems" class="row">
       <div class="col-md-4">
         <div class="color" [ngStyle]="{'background-color': cartItem.color.hex}"></div>
-        <img src="{{cartItem.thumb}}" alt="{{cartItem.name}}">
+        <img style="object-fit: contain" src="{{cartItem.thumb}}" alt="{{cartItem.name}}">
       </div>
       <div class="col-md-8 details">
         <div class="row">

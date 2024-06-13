@@ -6,7 +6,7 @@
   <div *ngIf="innerLoading" style="min-height: 50vh"></div>
   <div *ngIf="product != null && innerLoading == false" class="row pt-5">
     <div class="col-md-7">
-      <img class="product-img img-responsive" src="{{ activeProductVariant.image }}" alt="{{ product.name }}">
+      <img style="object-fit: contain" class="product-img img-responsive" src="{{ activeProductVariant.image }}" alt="{{ product.name }}">
     </div>
     <div class="col-md-4 mr-auto">
 
@@ -67,7 +67,7 @@
           <div class="variant-info col-md-12" *ngIf="activeTab === 0">
             <div *ngFor="let v of product.productVariantDetails"
               class="col-md-4 {{v.id === activeProductVariant.id ? 'active' : ''}}" (click)="setActiveVariant(v.id)">
-              <img src="{{v.thumb}}" alt="{{v.color.name}}">
+              <img style="object-fit: contain" src="{{v.thumb}}" alt="{{v.color.name}}">
             </div>
           </div>
           <div class="product-detail-info col-md-12" *ngIf="activeTab === 1">

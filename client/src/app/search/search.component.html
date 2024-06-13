@@ -10,7 +10,7 @@
     <div *ngFor="let product of products" class="search-result row">
       <div class="search-card col-md-3">
         <a routerLink="/detail/{{product.url}}/0">
-          <img src="{{product.productVariants[0].thumb}}" alt="{{product.name}}">
+          <img style="object-fit: contain" src="{{product.productVariants[0].thumb}}" alt="{{product.name}}">
           <hr>
           <p class="product-name">{{product.name}}</p>
           <div class="row">

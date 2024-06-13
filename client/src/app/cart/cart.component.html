@@ -16,7 +16,7 @@
       <div class="row item" *ngFor="let cartItem of (cartState | async).cart.cartItems">
         <div class="col-md-3 product-image">
           <div class="color" [ngStyle]="{'background-color': cartItem.color.hex}"></div>
-          <img src="{{cartItem.thumb}}" alt="{{cartItem.name}}" (click)="goToItem(cartItem.url)" />
+          <img style="object-fit: contain" src="{{cartItem.thumb}}" alt="{{cartItem.name}}" (click)="goToItem(cartItem.url)" />
         </div>
 
         <div class="col-md-3 description" (click)="goToItem(cartItem.url)">

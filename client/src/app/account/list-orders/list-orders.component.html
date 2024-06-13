@@ -94,7 +94,7 @@
               <div class="row item" (click)="goToItem(orderDetail.url)">
                 <div class="col-md-4">
                   <div class="color" [ngStyle]="{'background-color': orderDetail.color.hex}"></div>
-                  <img src="{{orderDetail.thumb}}" alt="{{orderDetail.name}}">
+                  <img style="object-fit: contain" src="{{orderDetail.thumb}}" alt="{{orderDetail.name}}">
                 </div>
                 <div class="col-md-8 details">
                   <div class="row">

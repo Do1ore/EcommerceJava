@@ -9,7 +9,7 @@
     <div *ngIf="!(showcaseState | async).loading.includes('INTERESTED')" class="interested-cards" #interestedCards>
       <div class="interested-card col-lg-3 col-md-6 col-12" *ngFor="let i of (showcaseState | async).interested">
         <a routerLink="/detail/{{i.url}}/{{i.productVariants[0].id}}">
-          <img src="{{i.productVariants[0].thumb}}" alt="product image">
+          <img style="object-fit: contain" src="{{i.productVariants[0].thumb}}" alt="product image">
           <hr>
           <p class="product-name">{{i.name}}</p>
           <div class="row">
