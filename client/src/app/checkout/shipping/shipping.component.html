@@ -33,21 +33,21 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="state">STATE</label>
+              <label for="state">РЕГИОН</label>
               <input type="text" id="state" class="form-control" name="state" formControlName="state" [maxlength]="240">
               <span *ngIf="shippingForm.get('state').invalid && shippingForm.get('state').touched">
-                <span class="alert-danger">Please enter a valid state</span>
+                <span class="alert-danger">Введите правильный регион</span>
               </span>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
-              <label for="zip">ZIP</label>
+              <label for="zip">ПОЧТОВЫЙ ИНДЕКС</label>
               <input type="text" id="zip" class="form-control" name="zip" formControlName="zip" [maxlength]="6"
                 [minlength]="5">
               <span *ngIf="shippingForm.get('zip').invalid && shippingForm.get('zip').touched" class="alert-danger">
-                Please enter a valid zip number!
+                Введите правильный почтовый индекс
               </span>
             </div>
           </div>
@@ -56,7 +56,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label for="shipAddress">ADDRESS</label>
+              <label for="shipAddress">АДРЕС</label>
               <textarea type="text" id="shipAddress" class="form-control" name="shipAddress"
                 formControlName="shipAddress" rows="3">
 
@@ -81,7 +81,7 @@
           <div class="same col-md-12" [ngClass]="!billingAddressEnabled ? 'active' : ''"
             (click)="billingAddressEnabled = false">
             <div></div>
-            <span>My billing address is the same as my shipping address.</span>
+            <span>Мой адрес совопадает с адресом проживания</span>
           </div>
         </div>
 
@@ -89,7 +89,7 @@
           <div class="different col-md-12" [ngClass]="billingAddressEnabled ? 'active' : ''"
             (click)="billingAddressEnabled = true">
             <div></div>
-            <span>My billing address is not the same as my shipping address.</span>
+            <span>Мой адрес не совопадает с адресом проживания</span>
           </div>
         </div>
 
@@ -109,7 +109,7 @@
             </div>
             <div class="col-md-6">
               <button class="btn btn-danger" type="submit" [disabled]="shippingForm.invalid">
-                Continue
+                Продолжить
               </button>
             </div>
           </div>

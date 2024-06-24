@@ -1,6 +1,6 @@
 <div class="summary" *ngIf="(cartState | async).cart">
   <div class="title">
-    Summary
+    Итого
   </div>
   <div class="product">
     <div *ngFor="let cartItem of (cartState | async).cart.cartItems" class="row">
@@ -28,7 +28,7 @@
   <div class="pricing">
     <div class="row">
       <div class="col-md-4 col-4">
-        <span class="label">Cart</span>
+        <span class="label">Корзина</span>
       </div>
       <div class="col-md-8 col-8">
         <span>{{(cartState | async).cart.totalCartPrice.toFixed(2) | number:'1.2' }} BYN</span>
@@ -36,7 +36,7 @@
     </div>
     <div class="row ">
       <div class="col-md-4 col-4">
-        <span class="label">Shipping</span>
+        <span class="label">Доставка</span>
       </div>
       <div class="col-md-8 col-8">
         <span>{{(cartState | async).cart.totalCargoPrice.toFixed(2) | number:'1.2' }} BYN</span>
@@ -45,7 +45,7 @@
 
     <div *ngIf="(cartState | async).cart && (cartState | async).cart.discount" class="row">
       <div class="col-md-4 col-4">
-        <span class="label discount-text">Discount</span>
+        <span class="label discount-text">Скидка</span>
       </div>
       <div class="col-md-8 col-8">
         <span class="discount-text">{{(cartState | async).cart.discount.discountPercent}}%</span>
@@ -56,7 +56,7 @@
   <div class="total">
     <div class="row">
       <div class="col-md-4 col-4">
-        <span class="label">Total</span>
+        <span class="label">Всего</span>
       </div>
       <div class="col-md-8 col-8">
         <span>{{(cartState | async).cart.totalPrice.toFixed(2) | number:'1.2' }} BYN</span>
@@ -69,16 +69,16 @@
       <div class="col-md-12">
         <input type="checkbox" name="terms" id="terms" (change)="termsAccepted = !termsAccepted">
         <label for="terms">
-          <p>I have read and confirm</p>
+          <p>Я прочитал</p>
         </label>
         <div class="terms-text" (click)="openTermsModel()">
-          <p>the terms of service.</p>
+          <p>пользовательское соглашение</p>
         </div>
       </div>
     </div>
     <div class="row">
       <Button class="btn btn-danger" (click)="openBankModal()" [disabled]="!termsAccepted">
-        Purchase
+        Купить
       </Button>
     </div>
   </div>

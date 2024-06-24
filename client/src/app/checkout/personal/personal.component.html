@@ -18,10 +18,10 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label for="phone">PHONE NUMBER</label>
+            <label for="phone">НОМЕР ТЕЛЕФОНА</label>
             <input type="text" id="phone" class="form-control" name="phone" formControlName="phone" [maxlength]="12">
             <span *ngIf="personalForm.get('phone').invalid && personalForm.get('phone').touched" class="alert-danger">
-              Please enter a valid phone number!
+              Введите правильный номер телефона
             </span>
           </div>
         </div>
@@ -34,12 +34,12 @@
           <div class="row">
             <div class="col-md-6">
               <a routerLink="/cart" class="btn back" type="button">
-                Back to Cart
+                Обратно в корзину
               </a>
             </div>
             <div class="col-md-6">
               <button class="btn btn-danger" type="submit" [disabled]="personalForm.invalid || personalForm.pending">
-                Continue
+                Продолжить
               </button>
             </div>
           </div>
