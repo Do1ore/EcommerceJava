@@ -1,6 +1,6 @@
 version: '3'
 services:
-  mysql-db:
+  mysql:
     hostname: mysql
     image: mysql:8.1
     restart: always
@@ -21,7 +21,7 @@ services:
       context: ./authorization_server
     container_name: authorization_server
     depends_on:
-      - mysql-db
+      - mysql
     environment:
       - >-
         SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/keyist?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
@@ -36,7 +36,7 @@ services:
       context: ./resource_server
     container_name: resource_server
     depends_on:
-      - mysql-db
+      - mysql
       - authorization_server
     environment:
       - >-
