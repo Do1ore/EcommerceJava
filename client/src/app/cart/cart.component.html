@@ -3,13 +3,12 @@
     <div class="cart-info col-md-7">
       <div class="title">
         <p>Корзина покупок</p>
-        <span>У вас есть товар: {{cartItemCount}}<span *ngIf="cartItemCount > 1">ы</span>в вашей корзине.</span>
+        <span>У вас товаров в корзине: {{cartItemCount}}</span>
       </div>
       <div *ngFor="let e of (cartState | async).errors">
         <div *ngIf="e.errorEffect == 'REMOVE_FROM_CART'" class="alert-warning p-2">
-          <div *ngIf="e.error.status === 400 || e.error.status === 401">Could not remove item.</div>
-          <div *ngIf="e.error.status === 500 || e.error.status === 0">Internal server error! Please contact our
-            support team.
+          <div *ngIf="e.error.status === 400 || e.error.status === 401">Не получается удалить товар.</div>
+          <div *ngIf="e.error.status === 500 || e.error.status === 0">Внутрення ошибка сервера.
           </div>
         </div>
       </div>
@@ -104,7 +103,7 @@
       <div class="checkout">
         <div class="row">
           <div class="col-md-12">
-            <button class="btn" (click)="activatePurchase()">CHECKOUT</button>
+            <button class="btn" (click)="activatePurchase()">ЗАКАЗАТЬ</button>
           </div>
         </div>
 
@@ -133,7 +132,7 @@
                   <input class="form-control" #discountCodeField type="text">
                 </div>
                 <div class="col-md-5">
-                  <button class="btn apply-code" (click)="applyCode(discountCodeField)">Apply</button>
+                  <button class="btn apply-code" (click)="applyCode(discountCodeField)">Применить</button>
                 </div>
               </div>
             </div>

@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="country">COUNTRY</label>
+              <label for="country">СТРАНА</label>
               <input type="text" id="country" class="form-control" name="country" formControlName="country"
                 [maxlength]="240">
               <span *ngIf="shippingForm.get('country').invalid && shippingForm.get('country').touched">
@@ -20,7 +20,7 @@
 
           <div class="col-md-6">
             <div class="form-group">
-              <label for="city">CITY</label>
+              <label for="city">ГОРОД</label>
               <input type="text" id="city" class="form-control" name="city" formControlName="city" [maxlength]="240">
               <span *ngIf="shippingForm.get('city').invalid && shippingForm.get('city').touched">
                 <span *ngIf="shippingForm.get('city').errors['required']" class="alert-danger">This field is
@@ -71,7 +71,6 @@
               <label for="billingAddress">BILLING ADDRESS</label>
               <textarea type="text" id="billingAddress" class="form-control" name="billingAddress"
                 formControlName="billingAddress" rows="3">
-
               </textarea>
             </div>
           </div>
